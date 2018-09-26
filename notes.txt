@@ -1,0 +1,110 @@
+Machine Learning in 10 Days:
+======================================
+https://www.quora.com/How-do-I-learn-Machine-Learning-in-10-days/answer/Prasoon-Goyal
+
+then......
+
+https://www.quora.com/How-can-I-learn-TensorFlow-with-Python
+
+=====================================
+
+Day 1: Terms
+
+Supervised Setting:
+	Supervised setting is where you have a set of inputs (x) and you want an output (y) and you used an algorithm to find the mapping function:
+		Y = f(x)
+	The goal is to approximate the mapping data (Y = f(x)) so that the next input (x) you get, you can predict what it's Y will be!
+	
+	It's called supervised learning because the algorithm (Student) is learning from the training dataset (supervisor) before making a final guess at the next input (x)
+		We know correct answers, algorithm guesses, teacher corrects them
+			this continues until the algorithm has an acceptable level of prediction
+
+Unsupervised Setting:
+	Unsupervised setting is where you only have inputs (x) but no corresponding output variables (we don't have the answers)
+	The goal of unsupervised learning is to learn the underlying distribution/structure and learn more about the data itself
+
+	It's unsupervised because we DON'T have the answers to the training set
+		the AI itself is left to figure out the underlying structures of the data
+
+Semi-Supervised Setting:
+	Problems where you have huge amounts of input data (x) and small amounts of output data answers (Y) are for semi-supervised settings
+		A good example is a photo archive where you want to find all dogs
+		only some of the photos are labelled "dog", "cat", "horse", but most are now
+	This is one of the most-common types of machine learning as data-labeling is complicated and expensive
+		unlabeled data is mostly cheap and free
+
+	You can use unsupervised learning to try and discover/learn the structure of the data
+	You can use supervised learning to try and predict/label the unlabled data
+
+
+Reinforcement Learning:
+	Real life doesn't always give you nice supervised-settings datasets
+	This is ongoing machine learning where the learning needs to perform an ACTION
+		it picks an action on its own
+			the result is used to determine "hey that was good!" or "that was bad"
+
+	The goal is to get better overtime for long-term reward
+
+	Think about a mouse in a maze
+		go left
+			bad
+		go right
+			bad
+		go up
+			good!
+
+		...and so-on and so-forth until you maximize your reward and get to the end of the maze
+
+
+
+Most-Common-Problems:
+
+Classification (binary + multiclass):
+	Classification is mostly about predicting a LABEL
+	Classification predictive modeling is figuring out output (Y) from input(X) so that we can predict the next (Y)
+	The outputs are called "LABELS" (think, labeling a photo!)
+		for example, you can label a set of emails as SPAM or NOT SPAM
+	
+	We do this by assigning probabilities to the labels before deciding on one
+		an email with 0.9 probability of being spam would be labeled spam vs its 0.1 probability of being not-spam
+
+	Classification accuracy is easy - just a set percentage of correct labels / incorrect labels
+		accuracy = correct / incorrect * 100
+
+
+Regression:
+	Regression is mostly about predicting a QUANTITY
+
+	Regression is taking inputs (X) to a CONTINUOUS output variable (y)
+		a continuous-output-variable is a constantly changing number as you go along
+			quantity is a good example
+
+	You might use machine learning from a whole set to try and predict what a house will sell for
+
+	The SKILL of a regression model must be measured. This is how close it gets to the expected-value
+
+	RMSE = (average(errors^2))^(1/2)
+	# the units (error score) will be in the same units as your quantity you are looking for!
+	# if you're looking for a dollar-amount, the RMSE will be possible-error in dollars
+
+
+So... Classification is the task of predicting a NEXT-VALUE whereas regression is the task of predicting a continuous output (quantity, dollar-amount)
+
+Clustering:
+	Clustering is a type of problem requiring an unsupervised setting approach
+
+	Clustering is the goal to segregate datapoints so that datapoints that are similar are grouped with each other
+
+	Suppose you own a store and have 10000 customers. You want a marketing strategy for each of them? No way.
+		Maybe instead you make just 10 marketing strategies and decide which ones to send which to?!
+			That's what I'm talking about
+
+
+PreProcessing of Data:
+
+Data Normalization:
+	Normalization is massaging data so that it can be merged with other data
+
+	Suppose you had two ranking sets. One ranking system was on a scale of 1-1000, another from 1-10
+		before merging you'd either have to divide all of the 1-1000 datapoints by 100 or multiply the 1-10 set by 100
+			afterwards the datasets can safely be merged
